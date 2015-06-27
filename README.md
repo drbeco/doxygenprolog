@@ -9,7 +9,7 @@ A filter done in LEX (.l) to convert _PROLOG_ programs into simple tokens of _C/
 
 You need to install this filter into your machine's __PATH__, and tells doxygen to use it by associating the file extension _\*.pl_ with __doxygenprolog__
 
-##### How To
+##### How To?
 
 To setup doxygen, you need:
 
@@ -24,6 +24,12 @@ To setup doxygen, you need:
 > FILE_PATTERNS         = *.pl *.prolog *.swipl
 
 > FILTER_PATTERNS       = *.pl="dox2pl"
+
+##### What is it like?
+
+Take a look at the wiki site here in github, and follow to the example link.
+
+[Dox2Pl Wiki](https://github.com/drbeco/doxygenprolog/wiki)
 
 
 This is still a starting prototype, but it is working very well. 
