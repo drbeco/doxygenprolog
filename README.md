@@ -1,6 +1,5 @@
-## doxygenprolog
+## Doxygen 2 Prolog
 ### A doxygen filter to use with Prolog
-
 
 #### Summary
 
@@ -9,6 +8,19 @@ A filter done in LEX (.l) to convert _PROLOG_ programs into simple tokens of _C/
 #### Description
 
 You need to install this filter into your machine's __PATH__, and tells doxygen to use it by associating the file extension _\*.pl_ with __doxygenprolog__
+
+##### How To
+
+To setup doxygen, you need:
+
+> OPTIMIZE_OUTPUT_FOR_C = NO
+> INPUT                 = README.md groups.dox prologsource.pl
+> EXTRACT_ALL           = YES
+> EXTRACT_STATIC        = YES
+> FILE_PATTERNS         = *.pl *.prolog
+> FILTER_PATTERNS       = *.pl="dox2pl<"
+
+This is still a starting prototype, but it is working very well. 
 
 Enjoy!
 

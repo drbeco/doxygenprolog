@@ -2,7 +2,7 @@
 
   #include <stdlib.h>
   
-/*    #define DEBUG(msg, ...) fprintf(stderr, "DEBUG: " msg "\n", ##__VA_ARGS__) */
+  /* #define DEBUG(msg, ...) fprintf(stderr, "DEBUG: " msg "\n", ##__VA_ARGS__) */
   /* #define DEBUG(msg, val) fprintf(stderr, "DEBUG: " msg "\n", val) */
   #define DEBUG(msg, ...)
 
@@ -19,6 +19,7 @@
 %x LOOP
 %x FINAL
 %x CONJUNCAO
+%x CCOMENTA
 
 ACO "/\*"
 FCO "\*/"
@@ -28,10 +29,14 @@ BR [ \t\r\n]
 QQ (.|[\n])
 BT ("\\"[^\n])
 AS "\""
-SY [^"\\\n]
-TT ({BT}|{SY})
-TX ({AS}{TT}*{AS})
-
+AP "'"
+SY1 [^"\\\n]
+SY2 [^'\\\n]
+TT1 ({BT}|{SY1})
+TT2 ({BT}|{SY2})
+TX1 ({AS}{TT1}*{AS})
+TX2 ({AP}{TT2}*{AP})
+TX ({TX1}|{TX2})
 
 %%
 
@@ -49,16 +54,19 @@ TX ({AS}{TT}*{AS})
 
 {ACO} {
   DEBUG("{ACO}");
+  ECHO;
   BEGIN(COMENTA);
 }
 
 <COMENTA>{QQ} {
   /*DEBUG("<COMENTA>{QQ}");*/
+  ECHO;
   ; /* ignora */
 }
 
 <COMENTA>{FCO} {
   DEBUG("<COMENTA>{FCO}");
+  ECHO;
   BEGIN(INITIAL);
 }
 
@@ -68,7 +76,7 @@ TX ({AS}{TT}*{AS})
 }
 
 "#".* {
-  DEBUG("%%.*");
+  DEBUG("#.*");
   ; /* ignora */
 }
 
@@ -191,10 +199,46 @@ TX ({AS}{TT}*{AS})
   ; /* ignora */
 }
 
+<CONJUNCAO>{ACO} {
+  DEBUG("<CONJUNCAO>{ACO}");
+  BEGIN(CCOMENTA);
+}
+
+<CCOMENTA>{QQ} {
+  /*DEBUG("<CCOMENTA>{QQ}");*/
+  ; /* ignora */
+}
+
+<CCOMENTA>{FCO} {
+  DEBUG("<CCOMENTA>{FCO}");
+  BEGIN(CONJUNCAO);
+}
+
+<CONJUNCAO>"%".* {
+  DEBUG("<CONJUNCAO>%%.*");
+  ; /* ignora */
+}
+
+<CONJUNCAO>"#".* {
+  DEBUG("<CONJUNCAO>#.*");
+  ; /* ignora */
+}
+
+<CONJUNCAO>{TX} {
+  DEBUG("{TX}");
+  ; /* ignora */
+}
+
+<CONJUNCAO>{BR} {
+  DEBUG("{BR}");
+  ; /* ignora */
+}
+
 <CONJUNCAO>{QQ} {
   DEBUG("<CONJUNCAO>{QQ}");
   ; /* ignora */
 }
+
 
 %%
 

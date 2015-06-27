@@ -42,6 +42,8 @@ run_agent(Percepcao, Acao) :-
 
 cabeca_dura(_,goforward).
 
+/** \brief main
+*/
 main :- goal.
 
 cor(vermelho).
