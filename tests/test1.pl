@@ -18,6 +18,8 @@
 % navigate(Actions,Score,Time).
 */
 
+// cpp comment
+
 /*
  * initialize([Stench,Breeze,Glitter,Bump,Scream])
  * initialize([Fedor,Vento,Brilho,Trombada,Grito])
@@ -46,6 +48,8 @@ cabeca_dura(_,goforward).
 */
 main :- goal.
 
+/** \brief cor is det
+*/
 cor(vermelho).
 cor(azul).
 cor(roxo).
@@ -60,14 +64,13 @@ senha([vermelho, azul, roxo, marrom, cinza]).
 
 resposta([A1, B1, C1, D1, E1], [A2, B2, C2, D2, E2]) :-
     senha([S1, S2, S3, S4, S5]),
+    % comment inside conjunction
     contabranco([A1, B1, C1, D1, E1], [S1, S2, S3, S4, S5], RESPB),
+    /* another comment inside conjunction */
     contapreto([A1, B1, C1, D1, E1], [S1, S2, S3, S4, S5], RESPP),
     append(RESPB, RESPP , Mtemp),
     Mtemp=[A2, B2, C2, D2, E2].
 
 
-contabranco([A1 | Resto1], [S1 | Resto2], RESPB) :-
-        contabranco(Resto1, Resto2, RESPB1),
-        A1=S1.
+contabranco([A1 | Resto1], [S1 | Resto2], RESPB) :- contabranco(Resto1, Resto2, RESPB1), A1=S1.
 #         append(Temp, [branco], RESPB),
-

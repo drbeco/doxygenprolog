@@ -15,15 +15,15 @@ To setup doxygen, you need:
 
 > OPTIMIZE_OUTPUT_FOR_C = NO
 
-> INPUT                 = README.md groups.dox prologsource.pl
+> INPUT                 = README.md groups.dox yourprologsource.pl
 
 > EXTRACT_ALL           = YES
 
 > EXTRACT_STATIC        = YES
 
-> FILE_PATTERNS         = *.pl *.prolog
+> FILE_PATTERNS         = *.pl *.prolog *.swipl
 
-> FILTER_PATTERNS       = *.pl="dox2pl<"
+> FILTER_PATTERNS       = *.pl="dox2pl"
 
 
 This is still a starting prototype, but it is working very well. 
@@ -35,10 +35,25 @@ __In appreciation__
 __Dr Beco__
 _________________________________________________________________
 
-####Program details
+####Change Log
 
-* Version 20150626.193317
-* Date 2015-06-26
+##### Version 20150627.125100
+* Read from file
+* Optarg keys: hVvq and [filename]
+* makefile without -Wno-unused-function
+* IFDEBUG defined
+* License and copyright information available in source (opensource complying)
+* Doxygen comments
+* Better format of output
+
+##### Version 20150626
+* First release
+* Read only from stdin (redirect < operator needed)
+
+
+####Program details
+* Version 20150627.125100
+* Date 2015-06-27
 * Author Ruben Carlo Benante <<rcb@beco.cc>> (beco)
 * Webpage <[www.beco.cc](www.beco.cc)>
 

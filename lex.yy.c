@@ -368,8 +368,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 33
-#define YY_END_OF_BUFFER 34
+#define YY_NUM_RULES 35
+#define YY_END_OF_BUFFER 36
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -377,17 +377,17 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static yyconst flex_int16_t yy_accept[83] =
+static yyconst flex_int16_t yy_accept[87] =
     {   0,
         0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,   34,    9,    8,    8,
-        7,    6,    9,    9,    2,    4,    4,   33,   11,   10,
-       15,   13,   12,   33,   20,   20,   20,   18,   17,   19,
-       23,   21,   33,   32,   31,   32,   29,   28,   32,   24,
-       32,   26,   26,    7,    6,    3,    1,    2,    2,    5,
-       11,   10,   10,   15,   14,    0,   16,    0,    0,    0,
-       23,   22,    0,   30,    0,   29,   28,    0,    0,   25,
-       27,    0
+        0,    0,    0,    0,    0,    0,   36,   10,    9,    9,
+        7,    6,   10,   10,    2,    4,    4,   35,   12,   11,
+       16,   14,   13,   35,   21,   21,   21,   19,   18,   20,
+       24,   22,   35,   34,   33,   34,   30,   29,   34,   25,
+       34,   27,   27,    7,    6,    3,    8,    1,    2,    2,
+        5,   12,   11,   11,   16,   15,    0,   17,    0,    0,
+        0,   24,   23,    0,   32,    0,   30,   29,    0,    0,
+       26,   31,   28,    8,   31,    0
     } ;
 
 static yyconst flex_int32_t yy_ec[256] =
@@ -428,70 +428,72 @@ static yyconst flex_int32_t yy_meta[20] =
         1,    1,    1,    1,    1,    1,    1,    1,    1
     } ;
 
-static yyconst flex_int16_t yy_base[96] =
+static yyconst flex_int16_t yy_base[102] =
     {   0,
-        0,   18,   73,   72,   36,   54,   72,    0,   85,   99,
-      115,    0,  131,    0,   71,   69,   78,  161,  161,  161,
-        0,    0,   67,   64,    3,  161,   58,  161,    5,   10,
-        7,  161,  161,   58,  161,    8,   10,  161,  161,  161,
-       28,  161,   57,  161,  161,    9,    0,    0,   26,  161,
-       57,  161,   51,    0,    0,  161,  161,   21,   26,  161,
-       40,   31,   32,   46,  161,   48,  161,    0,   46,    0,
-       56,  161,   50,  161,    0,    0,    0,   53,    0,  161,
-      161,  161,  150,  152,  154,  156,  158,   62,   61,   60,
-       34,   14,   10,    3,    0
+        0,   18,   80,   77,   36,   54,   72,    0,   85,   99,
+      115,    0,  131,    0,   76,   74,   83,  161,  161,  161,
+        0,    0,    1,   70,    3,  161,   67,  161,    5,   10,
+        7,  161,  161,   67,  161,    8,   10,  161,  161,  161,
+       28,  161,   66,  161,  161,    9,    0,    0,   26,  161,
+       26,  161,   57,    0,    0,  161,    0,  161,   26,   27,
+      161,   45,   34,   35,   49,  161,   54,  161,    0,   52,
+        0,   58,  161,   58,  161,    0,    0,    0,   59,    0,
+      161,    0,  161,    0,    0,  161,  150,  152,  154,  156,
+      158,   68,   67,   66,   64,   63,   62,   42,   34,    3,
 
+        0
     } ;
 
-static yyconst flex_int16_t yy_def[96] =
+static yyconst flex_int16_t yy_def[102] =
     {   0,
-       83,   83,   84,   84,   85,   85,   85,    7,   86,   86,
-       85,   11,   82,   13,   87,   87,   82,   82,   82,   82,
-       88,   89,   82,   82,   82,   82,   82,   82,   82,   82,
-       82,   82,   82,   82,   82,   90,   91,   82,   82,   82,
-       82,   82,   82,   82,   82,   92,   93,   94,   95,   82,
-       82,   82,   82,   88,   89,   82,   82,   82,   82,   82,
-       82,   82,   82,   82,   82,   90,   82,   90,   91,   91,
-       82,   82,   92,   82,   92,   93,   94,   95,   95,   82,
-       82,    0,   82,   82,   82,   82,   82,   82,   82,   82,
-       82,   82,   82,   82,   82
+       87,   87,   88,   88,   89,   89,   89,    7,   90,   90,
+       89,   11,   86,   13,   91,   91,   86,   86,   86,   86,
+       92,   93,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   94,   95,   86,   86,   86,
+       86,   86,   86,   86,   86,   96,   97,   98,   99,   86,
+       86,   86,   86,   92,   93,   86,  100,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   94,   86,   94,   95,
+       95,   86,   86,   96,   86,   96,   97,   98,   99,   99,
+       86,  101,   86,  100,  101,    0,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
 
+       86
     } ;
 
 static yyconst flex_int16_t yy_nxt[181] =
     {   0,
-       78,   19,   20,   77,   21,   22,   61,   61,   64,   64,
-       76,   67,   74,   23,   73,   24,   67,   58,   25,   19,
-       20,   59,   21,   22,   62,   68,   75,   70,   63,   71,
-       71,   23,   74,   24,   69,   58,   25,   29,   29,   58,
-       58,   61,   61,   79,   59,   62,   62,   64,   64,   62,
-       63,   67,   67,   74,   30,   29,   29,   71,   71,   74,
-       66,   55,   54,   70,   81,   68,   80,   75,   72,   65,
-       79,   60,   30,   31,   31,   57,   56,   82,   53,   32,
-       53,   27,   27,   82,   33,   82,   82,   34,   36,   82,
-       82,   37,   38,   39,   82,   40,   82,   82,   82,   82,
+       85,   19,   20,   84,   21,   22,   62,   62,   65,   65,
+       56,   68,   75,   23,   57,   24,   68,   59,   25,   19,
+       20,   60,   21,   22,   63,   69,   76,   71,   64,   72,
+       72,   23,   75,   24,   79,   81,   25,   29,   29,   82,
+       59,   59,   78,   80,   59,   60,   62,   62,   63,   63,
+       65,   65,   63,   64,   30,   29,   29,   68,   68,   72,
+       72,   75,   77,   74,   70,   75,   67,   55,   54,   71,
+       83,   69,   30,   31,   31,   76,   80,   73,   66,   32,
+       61,   58,   86,   53,   33,   53,   27,   34,   36,   27,
+       86,   37,   38,   39,   86,   40,   86,   86,   86,   86,
 
-       82,   38,   36,   82,   82,   37,   38,   39,   82,   40,
-       82,   82,   82,   82,   82,   38,   41,   41,   82,   82,
-       82,   82,   82,   82,   82,   82,   82,   42,   82,   82,
+       86,   38,   36,   86,   86,   37,   38,   39,   86,   40,
+       86,   86,   86,   86,   86,   38,   41,   41,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   42,   86,   86,
        43,   44,   45,   45,   46,   47,   48,   49,   44,   44,
        44,   44,   44,   50,   51,   44,   44,   44,   44,   44,
        18,   18,   26,   26,   28,   28,   35,   35,   52,   52,
-       17,   82,   82,   82,   82,   82,   82,   82,   82,   82,
-       82,   82,   82,   82,   82,   82,   82,   82,   82,   82
+       17,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86
     } ;
 
 static yyconst flex_int16_t yy_chk[181] =
     {   0,
-       95,    1,    1,   94,    1,    1,   29,   29,   31,   31,
-       93,   36,   46,    1,   92,    1,   37,   25,    1,    2,
+      101,    1,    1,  100,    1,    1,   29,   29,   31,   31,
+       23,   36,   46,    1,   23,    1,   37,   25,    1,    2,
         2,   25,    2,    2,   30,   36,   46,   37,   30,   41,
-       41,    2,   49,    2,   91,   58,    2,    5,    5,   58,
-       59,   61,   61,   49,   59,   62,   63,   64,   64,   62,
-       63,   66,   69,   73,    5,    6,    6,   71,   71,   78,
-       90,   89,   88,   69,   53,   66,   51,   73,   43,   34,
-       78,   27,    6,    7,    7,   24,   23,   17,   16,    7,
-       15,    4,    3,    0,    7,    0,    0,    7,    9,    0,
+       41,    2,   49,    2,   99,   51,    2,    5,    5,   51,
+       59,   60,   98,   49,   59,   60,   62,   62,   63,   64,
+       65,   65,   63,   64,    5,    6,    6,   67,   70,   72,
+       72,   74,   97,   96,   95,   79,   94,   93,   92,   70,
+       53,   67,    6,    7,    7,   74,   79,   43,   34,    7,
+       27,   24,   17,   16,    7,   15,    4,    7,    9,    3,
         0,    9,    9,    9,    0,    9,    0,    0,    0,    0,
 
         0,    9,   10,    0,    0,   10,   10,   10,    0,   10,
@@ -499,9 +501,9 @@ static yyconst flex_int16_t yy_chk[181] =
         0,    0,    0,    0,    0,    0,    0,   11,    0,    0,
        11,   13,   13,   13,   13,   13,   13,   13,   13,   13,
        13,   13,   13,   13,   13,   13,   13,   13,   13,   13,
-       83,   83,   84,   84,   85,   85,   86,   86,   87,   87,
-       82,   82,   82,   82,   82,   82,   82,   82,   82,   82,
-       82,   82,   82,   82,   82,   82,   82,   82,   82,   82
+       87,   87,   88,   88,   89,   89,   90,   90,   91,   91,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86,
+       86,   86,   86,   86,   86,   86,   86,   86,   86,   86
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -521,16 +523,107 @@ char *yytext;
 #line 1 "dox2pl.l"
 #line 2 "dox2pl.l"
 
-  #include <stdlib.h>
+/***************************************************************************
+ *   dox2pl.l                                 Version 20150627.125100      *
+ *                                                                         *
+ *   DoxygenProlog                                                         *
+ *   Copyright (C) 2015         by Ruben Carlo Benante                     *
+ ***************************************************************************
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************
+ *   To contact the author, please write to:                               *
+ *   Ruben Carlo Benante                                                   *
+ *   Email: rcb@beco.cc                                                    *
+ *   Webpage: www.beco.cc                                                  *
+ *   Phone: +55 (81) 3184-7555                                             *
+ ***************************************************************************/
+
+/* ---------------------------------------------------------------------- */
+/**
+ * \file dox2pl.l
+ * \ingroup GroupUnique
+ * \brief DoxygenProlog
+ * \details This program is a simple filter that converts a PROLOG source
+ *  into something like C doxygen can understand to do its job.
+ * \version 20150627.125100
+ * \date 2015-06-27
+ * \author Ruben Carlo Benante <<rcb@beco.cc>>
+ * \par Webpage
+ * <<a href="www.beco.cc">www.beco.cc</a>>
+ * \copyright (c) 2015 GNU GPL v3
+ * \note This program is free software: you can redistribute it
+ * and/or modify it under the terms of the
+ * GNU General Public License as published by
+ * the Free Software Foundation version 3 of the License.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program.
+ * If not, write to the Free Software Foundation, Inc.,
+ * 59 Temple Place - Suite 330, Boston, MA. 02111-1307, USA.
+ * Or read it online at <<http://www.gnu.org/licenses/>>.
+ *
+ * \todo Manual page 3.
+ *
+ */
+
+/* ---------------------------------------------------------------------- */
+/* includes */
+
+#include <stdio.h> /* Standard I/O functions */
+#include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
+#include <getopt.h> /* get options from system argc/argv */
+
+/* ---------------------------------------------------------------------- */
+/* definitions */
+
+#define VERSION (20150627.125100) /**< Version Number */
+
+/* Debug */
+#ifndef DEBUG /* gcc -DDEBUG=1 */
+#define DEBUG 0 /**< Activate/deactivate debug mode */
+#endif
+
+/** \brief Debug message if DEBUG on */
+#define IFDEBUG(M, ...) if(DEBUG) fprintf(stderr, "[DEBUG dox2pl: file:%s line:%d]: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__); else {;}
+
+/* limits */
+#define SBUFF 256 /**< String buffer */
+
+/* ---------------------------------------------------------------------- */
+/* globals */
+
+static int verb=0; /**< verbose level, global within the file */
+char ident[SBUFF]; /**< Identifier name and arguments */
+int mt; /**< Is it a Prolog: 1=module, 0=term ? */
+int p; /**< Non-balanced open parentheses or brackets  */
+int ca; /**< argument counter */
+
+/* ---------------------------------------------------------------------- */
+/* prototypes */
+
+void help(void); /* print some help */
+void copyr(void); /* print version and copyright information */
+float version(void); /* returns the version float number YYMMDD.hhmmss */
+int yywrap(void); /* exit after finish */
+/* int yyerror(void); / * show an error message (we don't want to show any) */
   
-  /* #define DEBUG(msg, ...) fprintf(stderr, "DEBUG: " msg "\n", ##__VA_ARGS__) */
-  /* #define DEBUG(msg, val) fprintf(stderr, "DEBUG: " msg "\n", val) */
-  #define DEBUG(msg, ...)
-
-  char ident[512]; /* nome e argumentos do identificador */
-  int mt; /* modulo ou termo */
-  int p; /* qtdd de parenteses ou colchetes aberta */
-  int ca; /* contador de argumentos */
+#define YY_NO_INPUT 1
 
 
 
@@ -538,8 +631,7 @@ char *yytext;
 
 
 
-
-#line 543 "lex.yy.c"
+#line 635 "lex.yy.c"
 
 #define INITIAL 0
 #define COMENTA 1
@@ -605,8 +697,6 @@ extern int yywrap (void );
 #endif
 #endif
 
-    static void yyunput (int c,char *buf_ptr  );
-    
 #ifndef yytext_ptr
 static void yy_flex_strncpy (char *,yyconst char *,int );
 #endif
@@ -733,10 +823,10 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 41 "dox2pl.l"
+#line 132 "dox2pl.l"
 
 
-#line 740 "lex.yy.c"
+#line 830 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -789,7 +879,7 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 83 )
+				if ( yy_current_state >= 87 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -821,17 +911,17 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 43 "dox2pl.l"
+#line 134 "dox2pl.l"
 {
-  DEBUG("{SE}");
+  IFDEBUG("{SE}");
   BEGIN(MOD);
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 48 "dox2pl.l"
+#line 139 "dox2pl.l"
 {
-  DEBUG("{IDE}: %s", yytext);
+  IFDEBUG("{IDE}: %s", yytext);
   mt=0; /* 0=termo, 1=mod */
   strcpy(ident, yytext);
   BEGIN(REG);
@@ -839,9 +929,9 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 55 "dox2pl.l"
+#line 146 "dox2pl.l"
 {
-  DEBUG("{ACO}");
+  IFDEBUG("{ACO}");
   ECHO;
   BEGIN(COMENTA);
 }
@@ -849,78 +939,95 @@ YY_RULE_SETUP
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 61 "dox2pl.l"
+#line 152 "dox2pl.l"
 {
-  /*DEBUG("<COMENTA>{QQ}");*/
+  /* IFDEBUG("<COMENTA>{QQ}"); */
   ECHO;
-  ; /* ignora */
 }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 67 "dox2pl.l"
+#line 157 "dox2pl.l"
 {
-  DEBUG("<COMENTA>{FCO}");
+  IFDEBUG("<COMENTA>{FCO}");
   ECHO;
+  printf("\n");
   BEGIN(INITIAL);
 }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 73 "dox2pl.l"
+#line 164 "dox2pl.l"
 {
-  DEBUG("%%.*");
-  ; /* ignora */
+  IFDEBUG("%%.*");
+  printf("/* ");
+  ECHO;
+  printf(" */\n");
 }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 78 "dox2pl.l"
+#line 171 "dox2pl.l"
 {
-  DEBUG("#.*");
-  ; /* ignora */
+  IFDEBUG("#.*");
+  printf("/* ");
+  ECHO;
+  printf(" */\n");
 }
 	YY_BREAK
 case 8:
-/* rule 8 can match eol */
 YY_RULE_SETUP
-#line 83 "dox2pl.l"
+#line 178 "dox2pl.l"
 {
-  DEBUG("{BR}");
-  ; /* ignora */
+  IFDEBUG("//.*");
+/*   printf("/ * "); */
+  ECHO;
+/*   printf(" * /"); */
+  printf("\n");
 }
 	YY_BREAK
 case 9:
+/* rule 9 can match eol */
 YY_RULE_SETUP
-#line 88 "dox2pl.l"
+#line 186 "dox2pl.l"
 {
-  DEBUG(".");
+  IFDEBUG("{BR}");
+/*   ECHO; */
   ; /* ignora */
 }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 93 "dox2pl.l"
+#line 192 "dox2pl.l"
 {
-  DEBUG("<MOD>{IDE}: %s", yytext);
+  IFDEBUG(".");
+  ; /* ignora */
+}
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 197 "dox2pl.l"
+{
+  IFDEBUG("<MOD>{IDE}: %s", yytext);
   mt=1; /* 0=termo, 1=mod */
   strcpy(ident, yytext);
   BEGIN(REG);
 }
 	YY_BREAK
-case 11:
-/* rule 11 can match eol */
+case 12:
+/* rule 12 can match eol */
 YY_RULE_SETUP
-#line 100 "dox2pl.l"
+#line 204 "dox2pl.l"
 {
-  DEBUG("<MOD>{BR}+");
+  IFDEBUG("<MOD>{BR}+");
+  ; /* ignora */
 }
 	YY_BREAK
-case 12:
+case 13:
 YY_RULE_SETUP
-#line 104 "dox2pl.l"
+#line 209 "dox2pl.l"
 {
-  DEBUG("<REG>[.]");
+  IFDEBUG("<REG>[.]");
   if(mt)
     printf("define_t ");
   else
@@ -929,21 +1036,21 @@ YY_RULE_SETUP
   BEGIN(INITIAL);
 }
 	YY_BREAK
-case 13:
+case 14:
 YY_RULE_SETUP
-#line 114 "dox2pl.l"
+#line 219 "dox2pl.l"
 {
-  DEBUG("<REG>'('");
+  IFDEBUG("<REG>'('");
   p=1;
   ca=1;
   BEGIN(LOOP);
 }
 	YY_BREAK
-case 14:
+case 15:
 YY_RULE_SETUP
-#line 121 "dox2pl.l"
+#line 226 "dox2pl.l"
 {
-  DEBUG("<REG>{SE}");
+  IFDEBUG("<REG>{SE}");
   if(mt)
     printf("error_t ");
   else
@@ -952,64 +1059,64 @@ YY_RULE_SETUP
   BEGIN(CONJUNCAO);
 }
 	YY_BREAK
-case 15:
-/* rule 15 can match eol */
-YY_RULE_SETUP
-#line 131 "dox2pl.l"
-{
-  DEBUG("<REG>{BR}+");
-  ; /* ignora */
-}
-	YY_BREAK
 case 16:
+/* rule 16 can match eol */
 YY_RULE_SETUP
-#line 136 "dox2pl.l"
+#line 236 "dox2pl.l"
 {
-  DEBUG("<LOOP>{TX}");
-  ; /* ignora string */
+  IFDEBUG("<REG>{BR}+");
+  ; /* ignora */
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 141 "dox2pl.l"
+#line 241 "dox2pl.l"
 {
-  DEBUG("<LOOP>[])]");
+  IFDEBUG("<LOOP>{TX}");
+  ; /* ignora string */
+}
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 246 "dox2pl.l"
+{
+  IFDEBUG("<LOOP>[ ]) ]");
   p--;
   if(!p)
     BEGIN(FINAL);
 }
 	YY_BREAK
-case 18:
+case 19:
 YY_RULE_SETUP
-#line 148 "dox2pl.l"
+#line 253 "dox2pl.l"
 {
-  DEBUG("<LOOP>[ [(]");
+  IFDEBUG("<LOOP>[ [( ]");
   p++;
 }
 	YY_BREAK
-case 19:
+case 20:
 YY_RULE_SETUP
-#line 153 "dox2pl.l"
+#line 258 "dox2pl.l"
 {
   if(p==1)
     ca++;
-  DEBUG("<LOOP>',' %d", ca);
-}
-	YY_BREAK
-case 20:
-/* rule 20 can match eol */
-YY_RULE_SETUP
-#line 159 "dox2pl.l"
-{
-  DEBUG("<LOOP>{QQ}");
-  ; /* ignora */
+  IFDEBUG("<LOOP>',' %d", ca);
 }
 	YY_BREAK
 case 21:
+/* rule 21 can match eol */
 YY_RULE_SETUP
-#line 164 "dox2pl.l"
+#line 264 "dox2pl.l"
 {
-  DEBUG("<FINAL>[.]");
+  IFDEBUG("<LOOP>{QQ}");
+  ; /* ignora */
+}
+	YY_BREAK
+case 22:
+YY_RULE_SETUP
+#line 269 "dox2pl.l"
+{
+  IFDEBUG("<FINAL>[.]");
   if(mt)
     printf("define_t ");
   else
@@ -1022,11 +1129,11 @@ YY_RULE_SETUP
   BEGIN(INITIAL);
 }
 	YY_BREAK
-case 22:
+case 23:
 YY_RULE_SETUP
-#line 178 "dox2pl.l"
+#line 283 "dox2pl.l"
 {
-  DEBUG("<FINAL>{SE}");
+  IFDEBUG("<FINAL>{SE}");
   if(mt)
     printf("error_t ");
   else
@@ -1039,96 +1146,115 @@ YY_RULE_SETUP
   BEGIN(CONJUNCAO);
 }
 	YY_BREAK
-case 23:
-/* rule 23 can match eol */
-YY_RULE_SETUP
-#line 192 "dox2pl.l"
-{
-  DEBUG("<FINAL>{BR}+");
-}
-	YY_BREAK
 case 24:
+/* rule 24 can match eol */
 YY_RULE_SETUP
-#line 196 "dox2pl.l"
+#line 297 "dox2pl.l"
 {
-  DEBUG("<CONJUNCAO>[.]");
-  BEGIN(INITIAL);
-  ; /* ignora */
+  IFDEBUG("<FINAL>{BR}+");
 }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 202 "dox2pl.l"
+#line 301 "dox2pl.l"
 {
-  DEBUG("<CONJUNCAO>{ACO}");
-  BEGIN(CCOMENTA);
-}
-	YY_BREAK
-case 26:
-/* rule 26 can match eol */
-YY_RULE_SETUP
-#line 207 "dox2pl.l"
-{
-  /*DEBUG("<CCOMENTA>{QQ}");*/
+  IFDEBUG("<CONJUNCAO>[.]");
+  BEGIN(INITIAL);
   ; /* ignora */
 }
 	YY_BREAK
-case 27:
+case 26:
 YY_RULE_SETUP
-#line 212 "dox2pl.l"
+#line 307 "dox2pl.l"
 {
-  DEBUG("<CCOMENTA>{FCO}");
-  BEGIN(CONJUNCAO);
+  IFDEBUG("<CONJUNCAO>{ACO}");
+  ECHO;
+  BEGIN(CCOMENTA);
+}
+	YY_BREAK
+case 27:
+/* rule 27 can match eol */
+YY_RULE_SETUP
+#line 313 "dox2pl.l"
+{
+  /* IFDEBUG("<CCOMENTA>{QQ}"); */
+  ECHO;
+  ; /* ignora */
 }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 217 "dox2pl.l"
+#line 319 "dox2pl.l"
 {
-  DEBUG("<CONJUNCAO>%%.*");
-  ; /* ignora */
+  IFDEBUG("<CCOMENTA>{FCO}");
+  ECHO;
+  printf("\n");
+  BEGIN(CONJUNCAO);
 }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 222 "dox2pl.l"
+#line 326 "dox2pl.l"
 {
-  DEBUG("<CONJUNCAO>#.*");
-  ; /* ignora */
+  IFDEBUG("<CONJUNCAO>%%.*");
+  printf("/* ");
+  ECHO;
+  printf(" */\n");
 }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 227 "dox2pl.l"
+#line 333 "dox2pl.l"
 {
-  DEBUG("{TX}");
-  ; /* ignora */
+  IFDEBUG("<CONJUNCAO>#.*");
+  printf("/* ");
+  ECHO;
+  printf(" */\n");
 }
 	YY_BREAK
 case 31:
-/* rule 31 can match eol */
 YY_RULE_SETUP
-#line 232 "dox2pl.l"
+#line 340 "dox2pl.l"
 {
-  DEBUG("{BR}");
-  ; /* ignora */
+  IFDEBUG("//.*");
+/*   printf("/ * "); */
+  ECHO;
+/*   printf(" * /"); */
+  printf("\n");
 }
 	YY_BREAK
 case 32:
-/* rule 32 can match eol */
 YY_RULE_SETUP
-#line 237 "dox2pl.l"
+#line 348 "dox2pl.l"
 {
-  DEBUG("<CONJUNCAO>{QQ}");
+  IFDEBUG("{TX}");
   ; /* ignora */
 }
 	YY_BREAK
 case 33:
+/* rule 33 can match eol */
 YY_RULE_SETUP
-#line 243 "dox2pl.l"
+#line 353 "dox2pl.l"
+{
+  IFDEBUG("{BR}");
+  ; /* ignora */
+}
+	YY_BREAK
+case 34:
+/* rule 34 can match eol */
+YY_RULE_SETUP
+#line 358 "dox2pl.l"
+{
+  IFDEBUG("<CONJUNCAO>{QQ}");
+  ; /* ignora */
+}
+	YY_BREAK
+case 35:
+YY_RULE_SETUP
+#line 364 "dox2pl.l"
 ECHO;
 	YY_BREAK
-#line 1132 "lex.yy.c"
+#line 1258 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 case YY_STATE_EOF(COMENTA):
 case YY_STATE_EOF(MOD):
@@ -1427,7 +1553,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 83 )
+			if ( yy_current_state >= 87 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -1455,50 +1581,13 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 83 )
+		if ( yy_current_state >= 87 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 82);
+	yy_is_jam = (yy_current_state == 86);
 
 	return yy_is_jam ? 0 : yy_current_state;
-}
-
-    static void yyunput (int c, register char * yy_bp )
-{
-	register char *yy_cp;
-    
-    yy_cp = (yy_c_buf_p);
-
-	/* undo effects of setting up yytext */
-	*yy_cp = (yy_hold_char);
-
-	if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
-		{ /* need to shift things up to make room */
-		/* +2 for EOB chars. */
-		register int number_to_move = (yy_n_chars) + 2;
-		register char *dest = &YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[
-					YY_CURRENT_BUFFER_LVALUE->yy_buf_size + 2];
-		register char *source =
-				&YY_CURRENT_BUFFER_LVALUE->yy_ch_buf[number_to_move];
-
-		while ( source > YY_CURRENT_BUFFER_LVALUE->yy_ch_buf )
-			*--dest = *--source;
-
-		yy_cp += (int) (dest - source);
-		yy_bp += (int) (dest - source);
-		YY_CURRENT_BUFFER_LVALUE->yy_n_chars =
-			(yy_n_chars) = YY_CURRENT_BUFFER_LVALUE->yy_buf_size;
-
-		if ( yy_cp < YY_CURRENT_BUFFER_LVALUE->yy_ch_buf + 2 )
-			YY_FATAL_ERROR( "flex scanner push-back overflow" );
-		}
-
-	*--yy_cp = (char) c;
-
-	(yytext_ptr) = yy_bp;
-	(yy_hold_char) = *yy_cp;
-	(yy_c_buf_p) = yy_cp;
 }
 
 #ifndef YY_NO_INPUT
@@ -2133,30 +2222,205 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 243 "dox2pl.l"
+#line 364 "dox2pl.l"
 
 
 
+/* ---------------------------------------------------------------------- */
+/**
+ * \ingroup GroupUnique
+ * \brief This is the main event of the evening
+ * \details Ladies and Gentleman... It's tiiiime!
+ * Fightiiiiing at the blue corner,
+ *
+ * \param[in] argc Argument counter
+ * \param[in] argv Argument strings (argument values)
+ *
+ * \retval 0 If succeed (EXIT_SUCCESS).
+ * \retval 1 Or another error code if failed.
+ *
+ * \par Example
+ * \code
+ *    Inside doxygen configuration file:
+ *            FILTER_PATTERNS = *.pl="dox2pl"
+ *    In the command line:
+ *            $./dox2pl filetofilter
+ * \endcode
+ *
+ * \warning It's still experimental. Please contact if some piece of PROLOG source
+ * is not detected correctly (provide the piece of source with a minimum example, the expected
+ * output and the actual output).
+ * \note You can read more about it at <<a href="www.beco.cc">www.beco.cc</a>>
+ * \author Ruben Carlo Benante
+ * \version 20150627.125100
+ * \date 2015-06-27
+ *
+ */
+int main(int argc, char *argv[])
+{
+  int opt; /* return from getopt() */
+  char *filename; /* keep file name */
+  FILE *finput=NULL;
+
+  yyin=stdin; /* input from stdin (default) or open file */
+
+  /* getopt() configured options:
+   *        -h  help
+   *        -V  version
+   *        -v  verbose
+   *        -q  quiet (oposite of verbose)
+   */
+  opterr = 0;
+  while((opt = getopt(argc, argv, "hVvq")) != EOF)
+    switch(opt)
+    {
+      case 'h':
+        help();
+        break;
+      case 'V':
+        copyr();
+        break;
+      case 'v':
+        verb++;
+        break;
+      case 'q':
+        verb--;
+        break;
+      case '?': /* no argument, unknown option */
+      default:
+        fprintf(stderr, "/*\n dox2pl usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
+        return EXIT_FAILURE;
+    }
+
+  /* There is an unknown option not processed by getopt() */
+  if(argc>optind)
+  {
+    filename=strdup(argv[optind]); /* Lets hope its a filename */
+    finput = fopen(filename,"r"); /* It can fail. Test before use. */
+  }
+
+  if(verb>1)
+    printf("/* dox2pl: verbose level set at: %d */\n", verb);
+
+  if(finput == NULL) /* Test if really opened */
+  {
+    if(verb>0)
+      fprintf(stderr, "/* dox2pl: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
+  }
+  else
+    yyin = finput;
+
+  if(yylex()) /* failed miserably */
+  {
+    fprintf(stderr, "/* dox2pl: lexical analyse failed miserably. */\n");
+    return 1;
+  }
+
+  if(verb>0)
+    printf("/* dox2pl ver. %13.6f: Copyright (C) 2015 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 3 */\n", version());
+
+  if(finput != NULL) /* If open, close it */
+    fclose(finput);
+  return EXIT_SUCCESS;
+}
+
+/* ---------------------------------------------------------------------- */
+/**
+ * \ingroup GroupUnique
+ * \brief Prints help information and exit
+ * \details Prints help information (usually called by opt -h)
+ * \return Void
+ * \author Ruben Carlo Benante
+ * \version 20150627.125100
+ * \date 2015-06-27
+ *
+ */
+void help(void)
+{
+  IFDEBUG("help()");
+  printf("%s - %s\n", "dox2pl", "DoxygenProlog");
+  printf("\nUsage: %s [-h|-v]\n", "d");
+  printf("\nOptions:\n");
+  printf("\t-h,  --help\n\t\tShow this help.\n");
+  printf("\t-V,  --version\n\t\tShow version and copyright information.\n");
+  printf("\t-v,  --verbose\n\t\tSet verbose level (cumulative).\n");
+  /* add more options here */
+  printf("\nExit status:\n\t0 if ok.\n\t1 some error occurred.\n");
+  printf("\nTodo:\n\tLong options not implemented yet.\n");
+  printf("\nAuthor:\n\tWritten by %s <%s>\n\n", "Ruben Carlo Benante", "rcb@beco.cc");
+  exit(EXIT_FAILURE);
+}
+
+/* ---------------------------------------------------------------------- */
+/**
+ * \ingroup GroupUnique
+ * \brief Prints version and copyright information and exit
+ * \details Prints version and copyright information (usually called by opt -V)
+ * \return Void
+ * \author Ruben Carlo Benante
+ * \version 20150627.125100
+ * \date 2015-06-27
+ *
+ */
+void copyr(void)
+{
+  IFDEBUG("copyr()");
+  printf("%s - Version %13.6f\n", "dox2pl", version());
+  printf("\nCopyright (C) %d %s <%s>, GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>. This  is  free  software:  you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n", 2015, "Ruben Carlo Benante", "rcb@beco.cc");
+  if(verb>3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
+  exit(EXIT_FAILURE);
+}
+
+/* ---------------------------------------------------------------------- */
+/**
+ * \ingroup GroupUnique
+ * \brief Returns the version number
+ * \details This function may be used to update easily the version number,
+ * instead of using the MACRO.
+ * \return Float VERSION in the form YYMMDD.hhmmss
+ * \author Ruben Carlo Benante
+ * \version 20150627.125100
+ * \date 2015-06-27
+ *
+ */
+float version(void)
+{
+  IFDEBUG("version()");
+  if(verb>3)
+    printf("Version %13.6f\n", VERSION); /* -vvvv */
+  return (VERSION); /* YYMMDD.hhmmss */
+}
+
+
+/* ---------------------------------------------------------------------- */
+/**
+ * \ingroup GroupUnique
+ * \brief Tells yylex to finish when input is exaust
+ * \return 1 to finish the program when no more input available
+ * \author Ruben Carlo Benante
+ * \version 20150627.125100
+ * \date 2015-06-27
+ *
+ */
 int yywrap(void)
 {
   return 1;
 }
 
+/*
+ * \ingroup GroupUnique
+ * \brief Called in case of syntax error, print an error message.
+ * \return 1 To indicate an error
+ *
+ * /
 int yyerror(void)
 {
-  printf("Error: %s\n", yytext);
-  /*exit(1);*/
+  printf("/ * dox2pl error: %s * /\n", yytext);
   return 1;
 }
+*/
 
-/*int main( int argc, char **argv ) */
-int main( void )
-{
-  if(yylex()) //falhou
-  {
-    fprintf(stderr, "//Fail.\n");
-    return 1;
-  }
-  return 0;
-}
+/* ---------------------------------------------------------------------- */
+/* vi: set ai et ts=2 sw=2 tw=0 wm=0 fo=croql : C config for Vim modeline */
+/* Template by Dr. Beco <rcb at beco dot cc> Version 20150619.231433      */
 
