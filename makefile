@@ -33,23 +33,23 @@ CC = gcc
 
 .PHONY: all clean
 
-all: pl2dox
+all: dox4pl
 
-pl2dox : lex.yy.c
+dox4pl : lex.yy.c
 	@echo --- gcc -------------------------------------------------
-	$(CC) lex.yy.c -o pl2dox $(CFLAGS)
+	$(CC) lex.yy.c -o dox4pl $(CFLAGS)
 
 debug : lex.yy.c
 	@echo --- gcc -DDEBUG=1 ---------------------------------------
-	$(CC) lex.yy.c -o pl2dox $(CFLAGS) $(DEBUG)
+	$(CC) lex.yy.c -o dox4pl $(CFLAGS) $(DEBUG)
 
-lex.yy.c : pl2dox.l
+lex.yy.c : dox4pl.l
 	@echo --- flex ------------------------------------------------
-	$(LEX) pl2dox.l
+	$(LEX) dox4pl.l
 
 clean:
-	rm -f lex.yy.c pl2dox *.o
+	rm -f lex.yy.c dox4pl *.o
 
 install:
-	sudo cp pl2dox /usr/local/bin
+	sudo cp dox4pl /usr/local/bin
 

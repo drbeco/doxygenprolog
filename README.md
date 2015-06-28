@@ -1,4 +1,4 @@
-## DoxygenProlog: pl2dox
+## DoxygenProlog: dox4pl
 ### A doxygen filter to use with Prolog
 
 #### Summary
@@ -23,7 +23,7 @@ To setup doxygen, you need:
 
 > FILE_PATTERNS         = *.pl *.prolog *.swipl
 
-> FILTER_PATTERNS       = *.pl="pl2dox"
+> FILTER_PATTERNS       = *.pl="dox4pl"
 
 ##### What is it like?
 
@@ -40,6 +40,18 @@ __Dr Beco__
 _________________________________________________________________
 
 ####Change Log
+
+##### Build 20150628.131912
+* Corrected the name to dox4pl (means doxygen for prolog)
+
+After realizing dox2pl was inverted, and trying to change to pl2dox, I observed that github repository
+is named DoxygenProlog. Renaming the repository was not an option, since it would break all links
+kind people over the world added into some sites 
+
+(speciall thanks to Dimitri [Doxygen Official](http://www.stack.nl/~dimitri/doxygen/helpers.html) and
+Jam [SWI-Prolog Official](http://www.swi-prolog.org/news/3b9546ec-1d66-11e5-9067-00163e357fe2)).
+
+So, changing to dox4pl solves all the problems. And as a 2 plus, its 4, not 2! ;)
 
 ##### Build 20150628.125352
 * Corrected the name to pl2dox (means prolog converted to doxygen)

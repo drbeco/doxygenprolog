@@ -1,7 +1,7 @@
 %{
 
 /***************************************************************************
- *   pl2dox.l                                 Version 20150627.125100      *
+ *   dox4pl.l                                 Version 20150627.125100      *
  *                                                                         *
  *   DoxygenProlog                                                         *
  *   Copyright (C) 2015         by Ruben Carlo Benante                     *
@@ -30,7 +30,7 @@
 
 /* ---------------------------------------------------------------------- */
 /**
- * \file pl2dox.l
+ * \file dox4pl.l
  * \ingroup GroupUnique
  * \brief DoxygenProlog
  * \details This program is a simple filter that converts a PROLOG source
@@ -77,7 +77,7 @@
 #endif
 
 /** \brief Debug message if DEBUG on */
-#define IFDEBUG(M, ...) if(DEBUG) fprintf(stderr, "[DEBUG pl2dox: file:%s line:%d]: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__); else {;}
+#define IFDEBUG(M, ...) if(DEBUG) fprintf(stderr, "[DEBUG dox4pl: file:%s line:%d]: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__); else {;}
 
 /* limits */
 #define SBUFF 256 /**< String buffer */
@@ -379,9 +379,9 @@ TX ({TX1}|{TX2})
  * \par Example
  * \code
  *    Inside doxygen configuration file:
- *            FILTER_PATTERNS = *.pl="pl2dox"
+ *            FILTER_PATTERNS = *.pl="dox4pl"
  *    In the command line:
- *            $./pl2dox filetofilter
+ *            $./dox4pl filetofilter
  * \endcode
  *
  * \warning It's still experimental. Please contact if some piece of PROLOG source
@@ -425,7 +425,7 @@ int main(int argc, char *argv[])
         break;
       case '?': /* no argument, unknown option */
       default:
-        fprintf(stderr, "/*\n pl2dox usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
+        fprintf(stderr, "/*\n dox4pl usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
         return EXIT_FAILURE;
     }
 
@@ -437,24 +437,24 @@ int main(int argc, char *argv[])
   }
 
   if(verb>1)
-    printf("/* pl2dox: verbose level set at: %d */\n", verb);
+    printf("/* dox4pl: verbose level set at: %d */\n", verb);
 
   if(finput == NULL) /* Test if really opened */
   {
     if(verb>0)
-      fprintf(stderr, "/* pl2dox: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
+      fprintf(stderr, "/* dox4pl: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
   }
   else
     yyin = finput;
 
   if(yylex()) /* failed miserably */
   {
-    fprintf(stderr, "/* pl2dox: lexical analyse failed miserably. */\n");
+    fprintf(stderr, "/* dox4pl: lexical analyse failed miserably. */\n");
     return 1;
   }
 
   if(verb>0)
-    printf("/* pl2dox ver. %13.6f: Copyright (C) 2015 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 3 */\n", version());
+    printf("/* dox4pl ver. %13.6f: Copyright (C) 2015 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 3 */\n", version());
 
   if(finput != NULL) /* If open, close it */
     fclose(finput);
@@ -475,7 +475,7 @@ int main(int argc, char *argv[])
 void help(void)
 {
   IFDEBUG("help()");
-  printf("%s - %s\n", "pl2dox", "DoxygenProlog");
+  printf("%s - %s\n", "dox4pl", "DoxygenProlog");
   printf("\nUsage: %s [-h|-v]\n", "d");
   printf("\nOptions:\n");
   printf("\t-h,  --help\n\t\tShow this help.\n");
@@ -502,7 +502,7 @@ void help(void)
 void copyr(void)
 {
   IFDEBUG("copyr()");
-  printf("%s - Version %13.6f\n", "pl2dox", version());
+  printf("%s - Version %13.6f\n", "dox4pl", version());
   printf("\nCopyright (C) %d %s <%s>, GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>. This  is  free  software:  you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n", 2015, "Ruben Carlo Benante", "rcb@beco.cc");
   if(verb>3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
   exit(EXIT_FAILURE);
@@ -552,7 +552,7 @@ int yywrap(void)
  * /
 int yyerror(void)
 {
-  printf("/ * pl2dox error: %s * /\n", yytext);
+  printf("/ * dox4pl error: %s * /\n", yytext);
   return 1;
 }
 */
