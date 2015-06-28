@@ -29,7 +29,7 @@ To setup doxygen, you need:
 
 Take a look at the wiki site here in github, and follow to the example link.
 
-[Dox2Pl Wiki](https://github.com/drbeco/doxygenprolog/wiki)
+[Pl2Dox Wiki](https://github.com/drbeco/doxygenprolog/wiki)
 
 
 This is still a starting prototype, but it is working very well. 
