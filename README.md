@@ -1,4 +1,4 @@
-## Doxygen 2 Prolog
+## DoxygenProlog: pl2dox
 ### A doxygen filter to use with Prolog
 
 #### Summary
@@ -34,9 +34,7 @@ Take a look at the wiki site here in github, and follow to the example link.
 
 This is still a starting prototype, but it is working very well. 
 
-Enjoy!
-
-__In appreciation__
+_Enjoy!_
 
 __Dr Beco__
 _________________________________________________________________
