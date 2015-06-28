@@ -520,11 +520,11 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "dox2pl.l"
-#line 2 "dox2pl.l"
+#line 1 "pl2dox.l"
+#line 2 "pl2dox.l"
 
 /***************************************************************************
- *   dox2pl.l                                 Version 20150627.125100      *
+ *   pl2dox.l                                 Version 20150627.125100      *
  *                                                                         *
  *   DoxygenProlog                                                         *
  *   Copyright (C) 2015         by Ruben Carlo Benante                     *
@@ -553,7 +553,7 @@ char *yytext;
 
 /* ---------------------------------------------------------------------- */
 /**
- * \file dox2pl.l
+ * \file pl2dox.l
  * \ingroup GroupUnique
  * \brief DoxygenProlog
  * \details This program is a simple filter that converts a PROLOG source
@@ -600,7 +600,7 @@ char *yytext;
 #endif
 
 /** \brief Debug message if DEBUG on */
-#define IFDEBUG(M, ...) if(DEBUG) fprintf(stderr, "[DEBUG dox2pl: file:%s line:%d]: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__); else {;}
+#define IFDEBUG(M, ...) if(DEBUG) fprintf(stderr, "[DEBUG pl2dox: file:%s line:%d]: " M "\n", __FILE__, __LINE__, ##__VA_ARGS__); else {;}
 
 /* limits */
 #define SBUFF 256 /**< String buffer */
@@ -823,7 +823,7 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
     
-#line 132 "dox2pl.l"
+#line 132 "pl2dox.l"
 
 
 #line 830 "lex.yy.c"
@@ -911,7 +911,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 134 "dox2pl.l"
+#line 134 "pl2dox.l"
 {
   IFDEBUG("{SE}");
   BEGIN(MOD);
@@ -919,7 +919,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 139 "dox2pl.l"
+#line 139 "pl2dox.l"
 {
   IFDEBUG("{IDE}: %s", yytext);
   mt=0; /* 0=termo, 1=mod */
@@ -929,7 +929,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 146 "dox2pl.l"
+#line 146 "pl2dox.l"
 {
   IFDEBUG("{ACO}");
   ECHO;
@@ -939,7 +939,7 @@ YY_RULE_SETUP
 case 4:
 /* rule 4 can match eol */
 YY_RULE_SETUP
-#line 152 "dox2pl.l"
+#line 152 "pl2dox.l"
 {
   /* IFDEBUG("<COMENTA>{QQ}"); */
   ECHO;
@@ -947,7 +947,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 157 "dox2pl.l"
+#line 157 "pl2dox.l"
 {
   IFDEBUG("<COMENTA>{FCO}");
   ECHO;
@@ -957,7 +957,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 164 "dox2pl.l"
+#line 164 "pl2dox.l"
 {
   IFDEBUG("%%.*");
   printf("/* ");
@@ -967,7 +967,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 171 "dox2pl.l"
+#line 171 "pl2dox.l"
 {
   IFDEBUG("#.*");
   printf("/* ");
@@ -977,7 +977,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 178 "dox2pl.l"
+#line 178 "pl2dox.l"
 {
   IFDEBUG("//.*");
 /*   printf("/ * "); */
@@ -989,7 +989,7 @@ YY_RULE_SETUP
 case 9:
 /* rule 9 can match eol */
 YY_RULE_SETUP
-#line 186 "dox2pl.l"
+#line 186 "pl2dox.l"
 {
   IFDEBUG("{BR}");
 /*   ECHO; */
@@ -998,7 +998,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 192 "dox2pl.l"
+#line 192 "pl2dox.l"
 {
   IFDEBUG(".");
   ; /* ignora */
@@ -1006,7 +1006,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 197 "dox2pl.l"
+#line 197 "pl2dox.l"
 {
   IFDEBUG("<MOD>{IDE}: %s", yytext);
   mt=1; /* 0=termo, 1=mod */
@@ -1017,7 +1017,7 @@ YY_RULE_SETUP
 case 12:
 /* rule 12 can match eol */
 YY_RULE_SETUP
-#line 204 "dox2pl.l"
+#line 204 "pl2dox.l"
 {
   IFDEBUG("<MOD>{BR}+");
   ; /* ignora */
@@ -1025,7 +1025,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 209 "dox2pl.l"
+#line 209 "pl2dox.l"
 {
   IFDEBUG("<REG>[.]");
   if(mt)
@@ -1038,7 +1038,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 219 "dox2pl.l"
+#line 219 "pl2dox.l"
 {
   IFDEBUG("<REG>'('");
   p=1;
@@ -1048,7 +1048,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 226 "dox2pl.l"
+#line 226 "pl2dox.l"
 {
   IFDEBUG("<REG>{SE}");
   if(mt)
@@ -1062,7 +1062,7 @@ YY_RULE_SETUP
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 236 "dox2pl.l"
+#line 236 "pl2dox.l"
 {
   IFDEBUG("<REG>{BR}+");
   ; /* ignora */
@@ -1070,7 +1070,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 241 "dox2pl.l"
+#line 241 "pl2dox.l"
 {
   IFDEBUG("<LOOP>{TX}");
   ; /* ignora string */
@@ -1078,7 +1078,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 246 "dox2pl.l"
+#line 246 "pl2dox.l"
 {
   IFDEBUG("<LOOP>[ ]) ]");
   p--;
@@ -1088,7 +1088,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 253 "dox2pl.l"
+#line 253 "pl2dox.l"
 {
   IFDEBUG("<LOOP>[ [( ]");
   p++;
@@ -1096,7 +1096,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 258 "dox2pl.l"
+#line 258 "pl2dox.l"
 {
   if(p==1)
     ca++;
@@ -1106,7 +1106,7 @@ YY_RULE_SETUP
 case 21:
 /* rule 21 can match eol */
 YY_RULE_SETUP
-#line 264 "dox2pl.l"
+#line 264 "pl2dox.l"
 {
   IFDEBUG("<LOOP>{QQ}");
   ; /* ignora */
@@ -1114,7 +1114,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 269 "dox2pl.l"
+#line 269 "pl2dox.l"
 {
   IFDEBUG("<FINAL>[.]");
   if(mt)
@@ -1131,7 +1131,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 283 "dox2pl.l"
+#line 283 "pl2dox.l"
 {
   IFDEBUG("<FINAL>{SE}");
   if(mt)
@@ -1149,14 +1149,14 @@ YY_RULE_SETUP
 case 24:
 /* rule 24 can match eol */
 YY_RULE_SETUP
-#line 297 "dox2pl.l"
+#line 297 "pl2dox.l"
 {
   IFDEBUG("<FINAL>{BR}+");
 }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 301 "dox2pl.l"
+#line 301 "pl2dox.l"
 {
   IFDEBUG("<CONJUNCAO>[.]");
   BEGIN(INITIAL);
@@ -1165,7 +1165,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 307 "dox2pl.l"
+#line 307 "pl2dox.l"
 {
   IFDEBUG("<CONJUNCAO>{ACO}");
   ECHO;
@@ -1175,7 +1175,7 @@ YY_RULE_SETUP
 case 27:
 /* rule 27 can match eol */
 YY_RULE_SETUP
-#line 313 "dox2pl.l"
+#line 313 "pl2dox.l"
 {
   /* IFDEBUG("<CCOMENTA>{QQ}"); */
   ECHO;
@@ -1184,7 +1184,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 319 "dox2pl.l"
+#line 319 "pl2dox.l"
 {
   IFDEBUG("<CCOMENTA>{FCO}");
   ECHO;
@@ -1194,7 +1194,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 326 "dox2pl.l"
+#line 326 "pl2dox.l"
 {
   IFDEBUG("<CONJUNCAO>%%.*");
   printf("/* ");
@@ -1204,7 +1204,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 333 "dox2pl.l"
+#line 333 "pl2dox.l"
 {
   IFDEBUG("<CONJUNCAO>#.*");
   printf("/* ");
@@ -1214,7 +1214,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 340 "dox2pl.l"
+#line 340 "pl2dox.l"
 {
   IFDEBUG("//.*");
 /*   printf("/ * "); */
@@ -1225,7 +1225,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 348 "dox2pl.l"
+#line 348 "pl2dox.l"
 {
   IFDEBUG("{TX}");
   ; /* ignora */
@@ -1234,7 +1234,7 @@ YY_RULE_SETUP
 case 33:
 /* rule 33 can match eol */
 YY_RULE_SETUP
-#line 353 "dox2pl.l"
+#line 353 "pl2dox.l"
 {
   IFDEBUG("{BR}");
   ; /* ignora */
@@ -1243,7 +1243,7 @@ YY_RULE_SETUP
 case 34:
 /* rule 34 can match eol */
 YY_RULE_SETUP
-#line 358 "dox2pl.l"
+#line 358 "pl2dox.l"
 {
   IFDEBUG("<CONJUNCAO>{QQ}");
   ; /* ignora */
@@ -1251,7 +1251,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 364 "dox2pl.l"
+#line 364 "pl2dox.l"
 ECHO;
 	YY_BREAK
 #line 1258 "lex.yy.c"
@@ -2222,7 +2222,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 364 "dox2pl.l"
+#line 364 "pl2dox.l"
 
 
 
@@ -2242,9 +2242,9 @@ void yyfree (void * ptr )
  * \par Example
  * \code
  *    Inside doxygen configuration file:
- *            FILTER_PATTERNS = *.pl="dox2pl"
+ *            FILTER_PATTERNS = *.pl="pl2dox"
  *    In the command line:
- *            $./dox2pl filetofilter
+ *            $./pl2dox filetofilter
  * \endcode
  *
  * \warning It's still experimental. Please contact if some piece of PROLOG source
@@ -2288,7 +2288,7 @@ int main(int argc, char *argv[])
         break;
       case '?': /* no argument, unknown option */
       default:
-        fprintf(stderr, "/*\n dox2pl usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
+        fprintf(stderr, "/*\n pl2dox usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
         return EXIT_FAILURE;
     }
 
@@ -2300,24 +2300,24 @@ int main(int argc, char *argv[])
   }
 
   if(verb>1)
-    printf("/* dox2pl: verbose level set at: %d */\n", verb);
+    printf("/* pl2dox: verbose level set at: %d */\n", verb);
 
   if(finput == NULL) /* Test if really opened */
   {
     if(verb>0)
-      fprintf(stderr, "/* dox2pl: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
+      fprintf(stderr, "/* pl2dox: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
   }
   else
     yyin = finput;
 
   if(yylex()) /* failed miserably */
   {
-    fprintf(stderr, "/* dox2pl: lexical analyse failed miserably. */\n");
+    fprintf(stderr, "/* pl2dox: lexical analyse failed miserably. */\n");
     return 1;
   }
 
   if(verb>0)
-    printf("/* dox2pl ver. %13.6f: Copyright (C) 2015 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 3 */\n", version());
+    printf("/* pl2dox ver. %13.6f: Copyright (C) 2015 Ruben Carlo Benante <rcb@beco.cc>, GNU GPL version 3 */\n", version());
 
   if(finput != NULL) /* If open, close it */
     fclose(finput);
@@ -2338,7 +2338,7 @@ int main(int argc, char *argv[])
 void help(void)
 {
   IFDEBUG("help()");
-  printf("%s - %s\n", "dox2pl", "DoxygenProlog");
+  printf("%s - %s\n", "pl2dox", "DoxygenProlog");
   printf("\nUsage: %s [-h|-v]\n", "d");
   printf("\nOptions:\n");
   printf("\t-h,  --help\n\t\tShow this help.\n");
@@ -2365,7 +2365,7 @@ void help(void)
 void copyr(void)
 {
   IFDEBUG("copyr()");
-  printf("%s - Version %13.6f\n", "dox2pl", version());
+  printf("%s - Version %13.6f\n", "pl2dox", version());
   printf("\nCopyright (C) %d %s <%s>, GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>. This  is  free  software:  you are free to change and redistribute it. There is NO WARRANTY, to the extent permitted by law. USE IT AS IT IS. The author takes no responsability to any damage this software may inflige in your data.\n\n", 2015, "Ruben Carlo Benante", "rcb@beco.cc");
   if(verb>3) printf("copyr(): Verbose: %d\n", verb); /* -vvvv */
   exit(EXIT_FAILURE);
@@ -2415,7 +2415,7 @@ int yywrap(void)
  * /
 int yyerror(void)
 {
-  printf("/ * dox2pl error: %s * /\n", yytext);
+  printf("/ * pl2dox error: %s * /\n", yytext);
   return 1;
 }
 */

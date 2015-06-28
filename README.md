@@ -23,7 +23,7 @@ To setup doxygen, you need:
 
 > FILE_PATTERNS         = *.pl *.prolog *.swipl
 
-> FILTER_PATTERNS       = *.pl="dox2pl"
+> FILTER_PATTERNS       = *.pl="pl2dox"
 
 ##### What is it like?
 
