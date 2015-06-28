@@ -43,6 +43,9 @@ _________________________________________________________________
 
 ####Change Log
 
+##### Build 20150628.125352
+* Corrected the name to pl2dox (means prolog converted to doxygen)
+
 ##### Version 20150627.125100
 * Read from file
 * Optarg keys: hVvq and [filename]
