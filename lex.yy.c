@@ -2339,15 +2339,22 @@ void help(void)
 {
   IFDEBUG("help()");
   printf("%s - %s\n", "dox4pl", "DoxygenProlog");
-  printf("\nUsage: %s [-h|-v]\n", "d");
+  printf("\nUsage: %s [-h|-V] [-v] [-f] source\n", "d");
   printf("\nOptions:\n");
-  printf("\t-h,  --help\n\t\tShow this help.\n");
-  printf("\t-V,  --version\n\t\tShow version and copyright information.\n");
-  printf("\t-v,  --verbose\n\t\tSet verbose level (cumulative).\n");
+  printf("\t-h,         --help\n\t\tShow this help.\n");
+  printf("\t-V,         --version\n\t\tShow version and copyright information.\n");
+  printf("\t-v,         --verbose\n\t\tSet verbose level (cumulative).\n");
+  printf("\t-f source,  --file source\n");
+  printf("\t\tRead from source (prolog file).\n");
+  printf("\t\tIf not given a source file, it will read from stdin.\n");
+  printf("\n\tWrite the following lines into your doxygen configuration file (.cfg):\n\n");
+  printf("\t\tFILE_PATTERNS   = *.pl *.prolog\n");
+  printf("\t\tFILTER_PATTERNS = *.pl=\"dox4pl\"\n");
   /* add more options here */
   printf("\nExit status:\n\t0 if ok.\n\t1 some error occurred.\n");
-  printf("\nTodo:\n\tLong options not implemented yet.\n");
-  printf("\nAuthor:\n\tWritten by %s <%s>\n\n", "Ruben Carlo Benante", "rcb@beco.cc");
+  printf("Todo:\n\tLong options not implemented yet.\n");
+  printf("Author:\n\tWritten by %s <%s>\n", "Ruben Carlo Benante", "rcb@beco.cc");
+  printf("\tSee dox4pl -V for copyright information.\n\n");
   exit(EXIT_FAILURE);
 }
 
