@@ -2259,7 +2259,7 @@ void yyfree (void * ptr )
 int main(int argc, char *argv[])
 {
   int opt; /* return from getopt() */
-  char *filename; /* keep file name */
+  char *filename=NULL; /* keep file name */
   FILE *finput=NULL;
 
   yyin=stdin; /* input from stdin (default) or open file */
@@ -2271,7 +2271,7 @@ int main(int argc, char *argv[])
    *        -q  quiet (oposite of verbose)
    */
   opterr = 0;
-  while((opt = getopt(argc, argv, "hVvq")) != EOF)
+  while((opt = getopt(argc, argv, "hVvqf:")) != EOF)
     switch(opt)
     {
       case 'h':
@@ -2286,14 +2286,27 @@ int main(int argc, char *argv[])
       case 'q':
         verb--;
         break;
+      case 'f':
+        filename=strdup(optarg);
+        break;
       case '?': /* no argument, unknown option */
       default:
         fprintf(stderr, "/*\n dox4pl usage:\n Type\n\t$%s -h\t\tfor help.\n*/\n", argv[0]);
         return EXIT_FAILURE;
     }
 
+  /* There is a filename available, from -f filename  */
+  if(filename!=NULL)
+  {
+    finput = fopen(filename,"r");
+    if(finput == NULL) /* Test if really opened first option */
+    {
+      if(verb>0)
+        fprintf(stderr, "/* dox4pl: I can't open %s for reading. */\n", filename);
+    }
+  }
   /* There is an unknown option not processed by getopt() */
-  if(argc>optind)
+  if(argc>optind && finput==NULL)
   {
     filename=strdup(argv[optind]); /* Lets hope its a filename */
     finput = fopen(filename,"r"); /* It can fail. Test before use. */
@@ -2305,7 +2318,7 @@ int main(int argc, char *argv[])
   if(finput == NULL) /* Test if really opened */
   {
     if(verb>0)
-      fprintf(stderr, "/* dox4pl: I can't open %s for reading. I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
+      fprintf(stderr, "/* dox4pl: I can't open %s for reading. */\n/* I'm still reading from stdin. */\n", (filename==NULL?"NULL":filename));
   }
   else
     yyin = finput;
