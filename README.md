@@ -41,6 +41,24 @@ _________________________________________________________________
 
 ####Change Log
 
+##### Build 20150703.015148
+
+* Added [-f filename]
+
+You can call it by using:
+
+> dox4pl -f filename
+
+or
+
+> dox4pl filename
+
+If both used
+
+> dox4pl filename2 -f filename1
+
+It will try to open both, always the one from `-f` first. Both failing, it will read from `stdin`.
+
 ##### Build 20150628.131912
 * Corrected the name to dox4pl (means doxygen for prolog)
 
